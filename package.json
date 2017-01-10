@@ -1,0 +1,19 @@
+{
+  "name": "jsla-tito-email-sync",
+  "version": "1.0.0",
+  "description": "micro service to consume webhooks, and sync with mailchimp",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "repository": {
+    "url": "https://github.com/jcblw/jsla-tito-email-sync",
+    "type": "git"
+  },
+  "author": "Jacob Lowe",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "micro": "^6.1.0"
+  }
+}
