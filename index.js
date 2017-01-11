@@ -1,5 +1,6 @@
 require('dotenv').config()
 const {json, send, sendError, createError} = require('micro')
+const {push, getRef} = require('./lib/firebase-db')
 const normalize = require('./lib/tito-normalize')
 const verify = require('./lib/tito-verify')
 const unauthed = createError(401, 'Unautorized')
@@ -11,6 +12,6 @@ module.exports = async function onRequest (req, res) {
     return sendError(req, res, unauthed)
   }
   const user = normalize(payload)
-  // make a request to firebase to store user
+  await push(user)
   send(res, 200)
 }
